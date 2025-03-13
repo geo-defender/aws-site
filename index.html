@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Web Page</title>
+    <title>CTF Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            font-family: 'Arial', sans-serif;
         }
         h1 {
-            font-family: Arial, sans-serif;
-            color: #333;
+            animation: fadeInDown 1s ease;
         }
         img {
-            max-width: 80%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
     </style>
 </head>
-<body>
-    <h1>Welcome to My Static Web Page</h1>
-    <img src="https://srm-ctf-public.s3.eu-north-1.amazonaws.com/Images/Capture+The+Flag+(CTF)+cybersecurity+competition.webp" alt="Hello Image">
+<body class="flex items-center justify-center min-h-screen">
+    <div class="text-center p-8 bg-gray-800 bg-opacity-70 rounded-xl shadow-lg">
+        <h1 class="text-4xl font-bold text-white mb-6">Welcome to the AWS Red Team CTF</h1>
+        <img src="https://srm-ctf-public.s3.eu-north-1.amazonaws.com/Images/Capture+The+Flag+(CTF)+cybersecurity+competition.webp" alt="CTF Competition" class="rounded-lg shadow-xl max-w-full h-auto">
+    </div>
 </body>
 </html>
